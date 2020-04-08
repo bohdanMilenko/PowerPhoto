@@ -6,7 +6,7 @@ import Logo from './components/Logo/Logo'
 import ImageLinkInputForm from './components/ImageLinkInputForm/ImageLinkInputForm'
 import Rank from './components/Rank/Rank'
 import Particles from 'react-particles-js';
-import FaceRecognition from './components.FaceRecognition'
+import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 import particlesOptions from './particlesOptions'
 import Clarifai from 'clarifai';
 
@@ -17,9 +17,29 @@ const app = new Clarifai.App({
 class App extends Component {
     constructor() {
         super();
-        this.state ={
-            input:'',
+        this.state = {
+            input: '',
+            imageURL: '',
+            box: {},
         }
+    }
+
+    calculateFaceLocation = (data) => {
+        const faceBoundaries = data.outputs[0].data.regions[0].region_info.bounding_box;
+        const image = document.getElementById("imageToAdjust")
+        const width = Number(image.width);
+        const height = Number(image.height);
+        return{
+            leftCol: faceBoundaries.left_col * width,
+            topRow: faceBoundaries.top_row * height,
+            rightCol: width - (faceBoundaries.right_col * width),
+            bottomRow: height - (faceBoundaries.bottom_row * height)
+        }
+
+    };
+
+    displayFaceBox = (coordinates) => {
+        this.setState({box: coordinates})
     }
 
     onInputChange = (event) => {
@@ -27,16 +47,15 @@ class App extends Component {
     };
 
     onSubmitButton = () => {
-        app.models.predict(Clarifai.FACE_DETECT_MODEL, "https://samples.clarifai.com/metro-north.jpg").then(
-            function(response) {
-                console.log(response);
-            },
-            function(err) {
-                // there was an error
-            }
-        );
+        this.setState({imageURL: this.state.input})
+        app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+            .then((response) => {
+                this.displayFaceBox(this.calculateFaceLocation(response));
+            }).catch(err => console.log(err));
 
     };
+
+
     render() {
         return (
             <div className="App">
@@ -45,8 +64,8 @@ class App extends Component {
                 <Navigation/>
                 <Logo/>
                 <Rank/>
-                <ImageLinkInputForm onInputChange={ this.onInputChange}  onSubmitButton = {this.onSubmitButton }/>
-                <FaceRecognition/>
+                <ImageLinkInputForm onInputChange={this.onInputChange} onSubmitButton={this.onSubmitButton}/>
+                <FaceRecognition box={this.state.box} inputURL={this.state.imageURL}/>
             </div>
         )
     }
