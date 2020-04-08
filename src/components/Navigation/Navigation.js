@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navigation = () =>{
     return (
-        <nav style ={{display: "flex", justifyContent:'flex-end', paddingRight: 15}}>
+        <nav style ={{display: "flex", justifyContent:'flex-end', paddingRight: 15, fontWeight: 'bold'}}>
             <p className='f3 link dim black underline pa3 pointer'>Sign Out</p>
         </nav>
     )
