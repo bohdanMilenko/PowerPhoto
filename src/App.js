@@ -9,6 +9,7 @@ import Particles from 'react-particles-js';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 import particlesOptions from './particlesOptions'
 import Clarifai from 'clarifai';
+import SignIn from "./components/SignIn/SignIn";
 
 const app = new Clarifai.App({
     apiKey: 'ad327580dc1949f4b2f9bda82cf69e1d'
@@ -59,6 +60,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <SignIn/>
                 <Particles className='particlesParam'
                            params={particlesOptions}/>
                 <Navigation/>
