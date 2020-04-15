@@ -1,12 +1,12 @@
 import React from "react";
 
-const SignIn = () => {
+const SignIn = ({changeRoute}) => {
     return (
         <article className="br3 ba dark-gray b--black-100 mv4 w-100 w-100-m w-100-l mw6 shadow-5 center">
             <main className="pa4 black-80">
-                <form className="measure">
+                <div className="measure">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                        <legend className="f4 fw9 ph0 mh0">Sign In</legend>
+                        <legend className="f1 fw9 ph0 mh0">Sign In</legend>
                         <div className="mt3">
                             <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                             <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
@@ -19,13 +19,16 @@ const SignIn = () => {
                         </div>
                     </fieldset>
                     <div className="">
-                        <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                               type="submit" value="Sign in"/>
+                        <input
+                            onClick={() => changeRoute('Home')}
+                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                            type="submit"
+                            value="Sign In"/>
                     </div>
                     <div className="lh-copy mt3">
-                        <a href="#0" className="f6 link dim black db">Sign up</a>
+                        <p onClick={() => changeRoute('Register')} className="f6 link dim black db pointer">Register</p>
                     </div>
-                </form>
+                </div>
             </main>
         </article>
 
