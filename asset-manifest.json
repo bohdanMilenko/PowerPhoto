@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/bohdanMilenko/PowerPhoto/static/css/main.301a4025.chunk.css",
+    "main.js": "/bohdanMilenko/PowerPhoto/static/js/main.af1168c3.chunk.js",
+    "main.js.map": "/bohdanMilenko/PowerPhoto/static/js/main.af1168c3.chunk.js.map",
+    "runtime-main.js": "/bohdanMilenko/PowerPhoto/static/js/runtime-main.f583728b.js",
+    "runtime-main.js.map": "/bohdanMilenko/PowerPhoto/static/js/runtime-main.f583728b.js.map",
+    "static/css/2.3b6f1bda.chunk.css": "/bohdanMilenko/PowerPhoto/static/css/2.3b6f1bda.chunk.css",
+    "static/js/2.810d28b4.chunk.js": "/bohdanMilenko/PowerPhoto/static/js/2.810d28b4.chunk.js",
+    "static/js/2.810d28b4.chunk.js.map": "/bohdanMilenko/PowerPhoto/static/js/2.810d28b4.chunk.js.map",
+    "index.html": "/bohdanMilenko/PowerPhoto/index.html",
+    "precache-manifest.aeda0d2808f89e7f18259d2dfbd5f89b.js": "/bohdanMilenko/PowerPhoto/precache-manifest.aeda0d2808f89e7f18259d2dfbd5f89b.js",
+    "service-worker.js": "/bohdanMilenko/PowerPhoto/service-worker.js",
+    "static/css/2.3b6f1bda.chunk.css.map": "/bohdanMilenko/PowerPhoto/static/css/2.3b6f1bda.chunk.css.map",
+    "static/css/main.301a4025.chunk.css.map": "/bohdanMilenko/PowerPhoto/static/css/main.301a4025.chunk.css.map",
+    "static/js/2.810d28b4.chunk.js.LICENSE.txt": "/bohdanMilenko/PowerPhoto/static/js/2.810d28b4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f583728b.js",
+    "static/css/2.3b6f1bda.chunk.css",
+    "static/js/2.810d28b4.chunk.js",
+    "static/css/main.301a4025.chunk.css",
+    "static/js/main.af1168c3.chunk.js"
+  ]
+}
